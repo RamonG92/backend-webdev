@@ -1,17 +1,15 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
-import { ApiModelProperty } from "@nestjs/swagger";
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { ApiModelProperty } from '@nestjs/swagger';
 
 @Entity()
 export class Message {
-   
-    @PrimaryGeneratedColumn({
+        @PrimaryGeneratedColumn({
         name: 'postId',
     })
     id: number;
-    
     @ApiModelProperty({
-        example: "Ramon",
-        description: "The name of the owner of the post."
+        example: 'Ramon',
+        description: 'The name of the owner of the post.',
     })
     @Column({
         name: 'author',
@@ -20,8 +18,8 @@ export class Message {
     author: string;
 
     @ApiModelProperty({
-        example: "Hoi",
-        description: "The title of the post."
+        example: 'Hoi',
+        description: 'The title of the post.',
     })
     @Column({
         name: 'title',
@@ -29,10 +27,9 @@ export class Message {
         length: 100,
     })
     title: string;
-    
     @ApiModelProperty({
-        example: "Ramon",
-        description: "The actual message of the post."
+        example: 'Ramon',
+        description: 'The actual message of the post.',
     })
     @Column({
         name: 'message',

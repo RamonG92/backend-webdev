@@ -7,7 +7,7 @@ import { MessageService } from 'service/message.service';
 @Module({
   imports: [TypeOrmModule.forRoot(), MessageModule],
   controllers: [MessageController],
-  providers: [MessageService]
+  providers: [MessageService],
 })
 export class AppModule {
 

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable } from '@nestjs/common';
 import { Message } from '../model/message.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -7,7 +7,6 @@ import { Repository } from 'typeorm';
 export class MessageService {
 
     private readonly messageRepository: Repository<Message>;
-    
     constructor(
         @InjectRepository(Message)
         messageRepository: Repository<Message>) {
@@ -19,11 +18,8 @@ export class MessageService {
     }
 
     async create(request: Message): Promise<Message> {
-        console.log(typeof(request));
-        
         return await this.messageRepository.save(request);
     }
-
     // async update(author: string, title: string, text: string): Promise<Message> {
     //     return await this.messageRepository.update();
     // }

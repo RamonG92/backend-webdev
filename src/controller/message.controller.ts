@@ -13,9 +13,7 @@ export class MessageController {
     }
 
     @Post()
-    async create(@Body() request : Message): Promise<Message> {
-        console.log(request);
-        
+    async create(@Body() request: Message): Promise<Message> {
         return await this.messageService.create(request);
     }
 
